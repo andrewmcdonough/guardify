@@ -1,0 +1,13 @@
+%html
+  %head
+  %body
+    %h1 Guardify
+    - @albums.each do |album|
+      .album
+        .artist= album.artist
+        .album_name= album.album_name
+        .spotify
+          - if album.spotify
+            %a{:href => album.spotify}= album.spotify 
+          - else
+            Album not found on Spotify
